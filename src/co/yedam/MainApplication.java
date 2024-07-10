@@ -8,7 +8,7 @@ public class MainApplication {
 		// 프로그램의 시작
 		studentControl studentControl = new studentControl();
 		studentControl.run();
-
+		//ㅋㅌ
 	}
 
 }
