@@ -57,7 +57,7 @@ public class StudentDAO extends DAO {
 
 	// 삭제 기능 ////
 	public boolean deleteStudent(String stdNo) {
-		String sql = "delect tbl_student where std_no = ?";
+		String sql = "delete tbl_student where std_no = ?";
 		conn = getConn();
 		try {
 			psmt = conn.prepareStatement(sql);

@@ -111,12 +111,13 @@ public class studentControl {
 	void deleteStudent() {
 		
 		System.out.println("삭제할대상의 학생번호를 입력해주세요");
-		
-		if(sdao.deleteStudent()) {
-			
+		 String stdNo = scn.nextLine();
+		if(sdao.deleteStudent(stdNo)) {
+			System.out.println("삭제되었습니다.");
 		}else {
-			
+			System.out.println("삭제되지않았습니다");
 		}
+		
 	}
 	
 			
