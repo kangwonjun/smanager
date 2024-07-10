@@ -1,5 +1,6 @@
 package co.yedam.comtrol;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -32,9 +33,11 @@ public class studentControl {
 				break;
 				
 			case 3:
+				modifyStudent();
 				break;
 				
 			case 4:
+				deleteStudent();
 				break;
 				
 			case 5:
@@ -72,6 +75,51 @@ public class studentControl {
 			System.out.println("처리중 예외발생!");
 		}
 	}
+	
+	//수정 기능
+	// 수정기능.
+	void modifyStudent() {
+		String sno = "";
+		while (true) {
+		System.out.println("변경할 학생번호>");
+		 sno = scn.nextLine();
+		if (sdao.selectExists(sno) == 1) {
+			// 학생번호 존재.
+			break;
+		}
+		System.out.println("찾는 학생번호가 없음 학생번호 다시 입력");
+		}
+		
+		
+		System.out.println("변경할 연락처>");
+		String phone = scn.nextLine();
+		System.out.println("변경할 주소>");
+		String addr = scn.nextLine();
+		
+		StudentVO svo = new StudentVO();
+		svo.setAddress(addr);
+		svo.setStdPhone(phone);
+		svo.setStdNo(sno);
+		
+		if(sdao.updateStudent(svo)) {
+			System.out.println("수정완료!"
+					+ "");
+		}
+	}
+	
+	// 삭제 기능
+	void deleteStudent() {
+		
+		System.out.println("삭제할대상의 학생번호를 입력해주세요");
+		
+		if(sdao.deleteStudent()) {
+			
+		}else {
+			
+		}
+	}
+	
+			
 	
 	//목록 출력 기능.
 	void studentList() {
