@@ -1,14 +1,13 @@
 package go.game;
 
-import go.game.control.gameSellerControl;
+import go.game.control.GamesellerControl;
 
 public class Main {
-	
+
 	public static void main(String[] args) {
 		// 프로그램의 시작
-		gameSellerControl gamesellerControl  = new gameSellerControl();
+		GamesellerControl gamesellerControl = new GamesellerControl();
 		gamesellerControl.run();
 	}
 
 }
-//커밋 되는지 확인 하는 방법
