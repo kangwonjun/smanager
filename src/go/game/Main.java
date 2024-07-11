@@ -11,3 +11,4 @@ public class Main {
 	}
 
 }
+//커밋 되는지 확인 하는 방법
